@@ -7,6 +7,9 @@
   "author": "liuyong <564447023@qq.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "parcel index.html"
+  },
   "dependencies": {
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"
