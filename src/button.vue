@@ -15,7 +15,10 @@ export default {
     icon: String,
     iconPosition: {
       type: String,
-      default: "left"
+      default: "left",
+      validator(value) {
+        return ["left", "right"].includes(value);
+      }
     }
   }
 };
