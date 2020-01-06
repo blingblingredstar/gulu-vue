@@ -35,44 +35,12 @@
       }
     </style>
 
-    <style>
-      .g-button {
-        height: var(--button-height);
-        font-size: var(--font-size);
-        padding: 0 1em;
-        font: inherit;
-        border-radius: var(--border-radius);
-        border: 1px solid var(--border-color);
-        background: var(--button-bg);
-      }
-
-      .g-button:hover {
-        border-color: var(--border-color-hover);
-      }
-
-      .g-button:active {
-        background-color: var(--button-bg-active);
-      }
-
-      .g-button:focus {
-        outline: none;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <div id="app">
       <g-button></g-button>
-      {{msg}}
     </div>
-    <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="./src/button.js"></script>
-    <script>
-      new Vue({
-        el: "#app",
-        data: {
-          msg: "Hello Vue"
-        }
-      });
-    </script>
+    <script src="./src/app.js"></script>
   </body>
 </html>
