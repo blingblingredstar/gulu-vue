@@ -16,7 +16,8 @@ export default {
           "down",
           "thumbs-up",
           "download",
-          "settings"
+          "settings",
+          "loading"
         ].includes(value);
       }
     }
