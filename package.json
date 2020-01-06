@@ -1,0 +1,10 @@
+{
+  "name": "gulu-vue",
+  "version": "0.0.1",
+  "description": "基于Vue二次封装的UI框架",
+  "main": "index.js",
+  "repository": "https://github.com/blingblingredstar/gulu-vue",
+  "author": "liuyong <564447023@qq.com>",
+  "license": "MIT",
+  "private": false
+}
