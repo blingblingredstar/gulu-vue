@@ -18,11 +18,14 @@ const app = new Vue({
 });
 
 // Unit test
-import { expect } from "chai";
+import chai, { expect } from "chai";
+import spies from "chai-spies";
+chai.use(spies);
 
 const testElement = document.getElementById("test");
 
 {
+  // 测试是否能添加icon
   const Constructor = Vue.extend(Button);
   const vm = new Constructor({
     propsData: {
@@ -38,6 +41,7 @@ const testElement = document.getElementById("test");
 }
 
 {
+  // 测试loading是否能正常使用
   const Constructor = Vue.extend(Button);
   const vm = new Constructor({
     propsData: {
@@ -54,6 +58,7 @@ const testElement = document.getElementById("test");
 }
 
 {
+  // 测试样式是否正常
   const div = document.createElement("div");
   document.body.appendChild(div);
   const Constructor = Vue.extend(Button);
@@ -71,6 +76,7 @@ const testElement = document.getElementById("test");
 }
 
 {
+  // 测试icon位置为右时样式是否正常
   const div = document.createElement("div");
   document.body.appendChild(div);
   const Constructor = Vue.extend(Button);
@@ -84,6 +90,25 @@ const testElement = document.getElementById("test");
   let svgElement = vm.$el.querySelector("svg");
   let { order } = window.getComputedStyle(svgElement);
   expect(order).to.eq("2");
+  vm.$el.remove();
+  vm.$destroy();
+}
+
+{
+  // 测试点击事件
+  // 使用chai-spy进行mock
+  const Constructor = Vue.extend(Button);
+  const vm = new Constructor({
+    propsData: {
+      icon: "settings"
+    }
+  });
+  vm.$mount();
+
+  let spy = chai.spy(() => {});
+  vm.$on("click", spy);
+  vm.$el.click();
+  expect(spy).to.have.been.called();
   vm.$el.remove();
   vm.$destroy();
 }
