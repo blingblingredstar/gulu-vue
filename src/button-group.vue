@@ -5,7 +5,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    Array.from(this.$el.children).forEach(node => {
+      if (node.nodeName.toLowerCase() !== "button") {
+        console.warn(
+          `g-button-group的子元素应为g-button，检测到${node.nodeName.toLowerCase()}元素`
+        );
+      }
+    });
+  }
+};
 </script>
 
 <style lang="scss">
@@ -15,7 +25,10 @@ export default {};
 
   > .g-button {
     border-radius: 0;
-    margin-left: -1px;
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
 
     &:first-child {
       border-top-left-radius: var(--border-radius);
