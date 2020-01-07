@@ -3,7 +3,7 @@
     <g-icon v-if="loading" class="loading" name="loading"></g-icon>
     <g-icon v-else-if="icon" :name="icon"></g-icon>
     <span class="content">
-      <slot></slot>
+      <slot />
     </span>
   </button>
 </template>

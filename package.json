@@ -10,7 +10,8 @@
   "scripts": {
     "start": "parcel index.html",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-minify && karma start --single-run",
+    "npm-build": "npx parcel build index.js --no-cache --no-minify"
   },
   "dependencies": {
     "vue": "^2.6.11",
