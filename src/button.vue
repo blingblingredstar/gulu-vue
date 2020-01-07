@@ -9,7 +9,10 @@
 </template>
 
 <script>
+import Icon from "./icon.vue";
+
 export default {
+  components: { gIcon: Icon },
   props: {
     icon: String,
     loading: { type: Boolean, default: false },
