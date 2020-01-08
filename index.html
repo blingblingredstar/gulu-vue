@@ -37,20 +37,40 @@
         margin-bottom: 20px;
         margin-top: 20px;
       }
+      .bg {
+        background: yellow;
+        height: 100%;
+        border: 1px solid red;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <div class="box">
-        <g-row>
-          <g-col span="2"></g-col>
-          <g-col :span="12"></g-col>
+        <g-row gutter="20">
+          <g-col>
+            <div class="bg">1</div>
+          </g-col>
+          <g-col>
+            <div class="bg">1</div>
+          </g-col>
+          <g-col><div class="bg">1</div></g-col>
+          <g-col><div class="bg">1</div></g-col>
         </g-row>
 
         <g-row>
-          <g-col></g-col>
-          <g-col></g-col>
-          <g-col></g-col>
+          <g-col span="2" offset="2"><div class="bg">1</div></g-col>
+          <g-col :span="12"><div class="bg">1</div></g-col>
+        </g-row>
+
+        <g-row>
+          <g-col><div class="bg">1</div></g-col>
+          <g-col>
+            <div class="bg">1</div>
+          </g-col>
+          <g-col>
+            <div class="bg">1</div>
+          </g-col>
         </g-row>
 
         <g-row>
