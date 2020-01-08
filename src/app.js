@@ -17,4 +17,13 @@ const app = new Vue({
     loading2: false,
     loading3: false,
   },
+  methods: {
+    /**
+     *
+     * @param {Event} e
+     */
+    inputChange(e) {
+      console.log(e.target.value)
+    },
+  },
 })
