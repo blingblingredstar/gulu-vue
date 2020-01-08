@@ -5,25 +5,26 @@
 </template>
 
 <script>
-import "./svg";
+import './svg'
 export default {
+  name: 'GuluIcon',
   props: {
     name: {
       type: String,
       validator(value) {
         return [
-          "right",
-          "left",
-          "down",
-          "thumbs-up",
-          "download",
-          "settings",
-          "loading"
-        ].includes(value);
-      }
-    }
-  }
-};
+          'right',
+          'left',
+          'down',
+          'thumbs-up',
+          'download',
+          'settings',
+          'loading',
+        ].includes(value)
+      },
+    },
+  },
+}
 </script>
 
 <style lang="scss">

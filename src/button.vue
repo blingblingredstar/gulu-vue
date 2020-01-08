@@ -9,22 +9,23 @@
 </template>
 
 <script>
-import Icon from "./icon.vue";
+import Icon from './icon.vue'
 
 export default {
+  name: 'GuluButton',
   components: { gIcon: Icon },
   props: {
     icon: String,
     loading: { type: Boolean, default: false },
     iconPosition: {
       type: String,
-      default: "left",
+      default: 'left',
       validator(value) {
-        return ["left", "right"].includes(value);
-      }
-    }
-  }
-};
+        return ['left', 'right'].includes(value)
+      },
+    },
+  },
+}
 </script>
 
 <style lang="scss">

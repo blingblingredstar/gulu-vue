@@ -6,16 +6,17 @@
 
 <script>
 export default {
+  name: 'GuluButtonGroup',
   mounted() {
-    Array.from(this.$el.children).forEach(node => {
-      if (node.nodeName.toLowerCase() !== "button") {
+    Array.from(this.$el.children).forEach((node) => {
+      if (node.nodeName.toLowerCase() !== 'button') {
         console.warn(
-          `g-button-group的子元素应为g-button，检测到${node.nodeName.toLowerCase()}元素`
-        );
+          `g-button-group的子元素应为g-button，检测到${node.nodeName.toLowerCase()}元素`,
+        )
       }
-    });
-  }
-};
+    })
+  },
+}
 </script>
 
 <style lang="scss">
