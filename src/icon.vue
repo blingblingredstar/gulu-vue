@@ -20,6 +20,8 @@ export default {
           'download',
           'settings',
           'loading',
+          'info',
+          'error',
         ].includes(value)
       },
     },
@@ -27,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .g-icon {
   width: 1em;
   height: 1em;
