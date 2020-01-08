@@ -16,6 +16,7 @@ const app = new Vue({
     loading1: true,
     loading2: false,
     loading3: false,
+    message: 'Hello Vue',
   },
   methods: {
     /**

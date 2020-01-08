@@ -81,10 +81,14 @@ describe('Input', () => {
 
         // 模拟input事件
         const event = new Event(eventName)
+        const targetValue = 'hi'
+        Object.defineProperty(event, 'target', {
+          value: { value: targetValue, enumerable: true },
+        })
         const inputElement = vm.$el.querySelector('input')
         inputElement.dispatchEvent(event)
 
-        expect(callback).to.have.been.calledWith(event)
+        expect(callback).to.have.been.calledWith(targetValue)
       })
     })
   })

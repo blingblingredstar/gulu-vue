@@ -49,6 +49,8 @@
       <div class="box">
         <g-input value="赵六" error="姓名不能少于四个字符"></g-input>
         <g-input value="刘七" @change="inputChange"></g-input>
+        <g-input v-model="message"></g-input>
+        <p>{{ message }}</p>
       </div>
       <div class="box">
         <g-button
