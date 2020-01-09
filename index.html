@@ -48,16 +48,31 @@
     <div id="app">
       <div class="box">
         <g-row gutter="20">
-          <g-col>
+          <g-col
+            span="2"
+            :phone="{span: 12}"
+            :pad="{span: 8}"
+            :narrow-pc="{span: 6}"
+            :pc="{span: 4}"
+            :wide-pc="{span:2}"
+          >
             <div class="bg">1</div>
           </g-col>
-          <g-col>
+          <g-col
+            span="20"
+            :phone="{span: 12}"
+            :pad="{span: 16}"
+            :narrow-pc="{span: 18}"
+            :pc="{span: 20}"
+            :wide-pc="{span: 22}"
+          >
             <div class="bg">1</div>
           </g-col>
-          <g-col><div class="bg">1</div></g-col>
-          <g-col><div class="bg">1</div></g-col>
         </g-row>
-
+        <g-row>
+          <g-col span="12"><div class="bg"></div></g-col>
+          <g-col span="12"><div class="bg"></div></g-col>
+        </g-row>
         <g-row>
           <g-col span="2" offset="2"><div class="bg">1</div></g-col>
           <g-col :span="12"><div class="bg">1</div></g-col>
