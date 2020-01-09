@@ -13,15 +13,11 @@ export default {
     }
   },
   mounted() {
-    console.log('mounted')
-    console.log(
-      this.$children.forEach((child) => {
-        console.log(child.$options.name)
-        if (child.$options.name === 'GuluSider') {
-          this.layoutClasses.push('has-sider')
-        }
-      }),
-    )
+    this.$children.forEach((child) => {
+      if (child.$options.name === 'GuluSider') {
+        this.layoutClasses.push('has-sider')
+      }
+    })
   },
 }
 </script>
@@ -31,7 +27,6 @@ export default {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  border: 1px solid red;
 
   &.has-sider {
     flex-direction: row;
