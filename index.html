@@ -30,138 +30,24 @@
         font-size: var(--font-size);
       }
 
-      #app {
-        margin: 20px;
-      }
-      .box {
-        margin-bottom: 20px;
-        margin-top: 20px;
-      }
-      .bg {
-        background: yellow;
-        height: 100%;
-        border: 1px solid red;
+      
+     
+      .demo {
+        border: 1px solid #333;
+        min-height: 100px;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <div class="box">
-        <g-row>
-          <g-col span="24" :pad="{span:12}" :narrow-pc="{span: 8}">
-            <div class="bg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              accusantium commodi quod minus temporibus!
-            </div>
-          </g-col>
-          <g-col span="24" :pad="{span:12}" :narrow-pc="{span: 8}">
-            <div class="bg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              accusantium commodi quod minus temporibus!
-            </div>
-          </g-col>
-          <g-col span="24" :pad="{span:12}" :narrow-pc="{span: 8}">
-            <div class="bg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              accusantium commodi quod minus temporibus!
-            </div>
-          </g-col>
-          <g-col span="24" :pad="{span:12}" :narrow-pc="{span: 8}">
-            <div class="bg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              accusantium commodi quod minus temporibus!
-            </div>
-          </g-col>
-          <g-col span="24" :pad="{span:12}" :narrow-pc="{span: 8}">
-            <div class="bg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              accusantium commodi quod minus temporibus!
-            </div>
-          </g-col>
-          <g-col span="24" :pad="{span:12}" :narrow-pc="{span: 8}">
-            <div class="bg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              accusantium commodi quod minus temporibus!
-            </div>
-          </g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col
-            span="24"
-            :pad="{span: 8}"
-            :narrow-pc="{span: 6}"
-            :pc="{span: 4}"
-            :wide-pc="{span:2}"
-          >
-            <div class="bg">1</div>
-          </g-col>
-          <g-col
-            span="24"
-            :phone="{span: 12}"
-            :pad="{span: 16}"
-            :narrow-pc="{span: 18}"
-            :pc="{span: 20}"
-            :wide-pc="{span: 22}"
-          >
-            <div class="bg">1</div>
-          </g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col span="10" offset="2" :wide-pc="{span: 2, offset: 0}"
-            ><div class="bg"></div
-          ></g-col>
-          <g-col span="12" :wide-pc="{span:22}"><div class="bg"></div></g-col>
-        </g-row>
-        <g-row>
-          <g-col span="2" offset="2"><div class="bg">1</div></g-col>
-          <g-col :span="12"><div class="bg">1</div></g-col>
-        </g-row>
-
-        <g-row align="right">
-          <g-col><div class="bg">1</div></g-col>
-          <g-col>
-            <div class="bg">1</div>
-          </g-col>
-          <g-col>
-            <div class="bg">1</div>
-          </g-col>
-        </g-row>
-      </div>
-      <div class="box">
-        <g-input value="张三"></g-input>
-        <g-input value="李四" disabled></g-input>
-        <g-input value="王五" readonly></g-input>
-      </div>
-      <div class="box">
-        <g-input value="赵六" error="姓名不能少于四个字符"></g-input>
-        <g-input value="刘七" @change="inputChange"></g-input>
-        <g-input v-model="message"></g-input>
-        <p>{{ message }}</p>
-      </div>
-      <div class="box">
-        <g-button
-          @click="loading1 = !loading1"
-          icon="settings"
-          :loading="loading1"
-          >按钮</g-button
-        >
-        <g-button @click="() => loading2 = !loading2" :loading="loading2"
-          >按钮</g-button
-        >
-        <g-button
-          @click="loading3 = !loading3"
-          :loading="loading3"
-          icon="download"
-          :loading="true"
-          icon-position="right"
-          >按钮</g-button
-        >
-        <g-button-group>
-          <g-button icon="left">上一页</g-button>
-          <g-button>更多</g-button>
-          <g-button icon="right" icon-position="right">下一页</g-button>
-        </g-button-group>
-      </div>
+      <g-layout style="height: 100vh">
+        <g-sider class="demo">Sider</g-sider>
+        <g-layout>
+          <g-header class="demo">Header</g-header class="demo">
+          <g-content class="demo">Content</g-content>
+          <g-footer class="demo">Footer</g-footer>
+        </g-layout>
+      </g-layout>
     </div>
     <script src="./src/app.js"></script>
   </body>
