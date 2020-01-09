@@ -1,20 +1,24 @@
-$button-height: 32px;
-$button-bg: #fff;
-$button-bg-active: #eee;
+// 全局变量
 $font-size: 14px;
 $border-radius: 4px;
 $color: #333;
 $border-color: #999;
 $border-color-hover: #666;
-
 $red: #f1453d;
 $height: 32px;
 $color-disabled: #9c9c9c;
 $color-error: $red;
-
 $border-color-error: $red;
 $border-color-disabled: #9c9c9c;
-
 $padding: 0 8px;
-$input-font-size: 12px;
 $box-shadow-color: rgba(0, 0, 0, 0.5);
+// Button组件
+$button-height: 32px;
+$button-bg: #fff;
+$button-bg-active: #eee;
+// Input组件
+$input-font-size: 12px;
+// Toast组件
+$toast-height: 40px;
+$toast-background-color: rgba(0, 0, 0, 0.75);
+$toast-color: #fff;

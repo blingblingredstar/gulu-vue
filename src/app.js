@@ -32,7 +32,9 @@ Vue.use(plugin)
 
 const app = new Vue({
   el: '#app',
-  created() {
-    this.$toast('hello toast')
+  methods: {
+    showToast() {
+      this.$toast('toast')
+    },
   },
 })

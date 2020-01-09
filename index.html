@@ -15,47 +15,23 @@
         box-sizing: border-box;
       }
 
-      :root {
-        --button-height: 32px;
-        --button-bg: #fff;
-        --button-bg-active: #eee;
-        --font-size: 14px;
-        --border-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: #666;
-      }
-
       body {
-        font-size: var(--font-size);
+        font-size: 14px;
       }
       .sider {
         background: #ccc;
         width: 200px;
       }
-      .footer, .header {
+      .footer,
+      .header {
         background: #333;
         height: 100px;
       }
-      .content {
-        background: #aaa;
-      }
-     
-      
-     
- 
     </style>
   </head>
   <body>
     <div id="app">
-      <g-layout style="height: 100vh">
-        <g-sider class="demo">Sider</g-sider>
-        <g-layout>
-          <g-header class="demo">Header</g-header class="demo">
-          <g-content class="demo">Content</g-content>
-          <g-footer class="demo">Footer</g-footer>
-        </g-layout>
-      </g-layout>
+      <g-button @click="showToast">点击弹出提示</g-button>
     </div>
     <script src="./src/app.js"></script>
   </body>
