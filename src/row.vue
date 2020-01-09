@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="style">
+  <div class="row" :style="rowStyle">
     <slot />
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     },
   },
   computed: {
-    style() {
+    rowStyle() {
       return {
         marginLeft: `${-this.gutter / 2}px`,
         marginRight: `${-this.gutter / 2}px`,

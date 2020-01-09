@@ -1,5 +1,5 @@
 <template>
-  <div :class="['col', span && `col-${span}`, offset && `offset-${offset}`]" :style="style">
+  <div :class="colClass" :style="colStyle">
     <slot />
   </div>
 </template>
@@ -33,7 +33,11 @@ export default {
     },
   },
   computed: {
-    style() {
+    colClass() {
+      const { span, offset } = this
+      return ['col', span && `col-${span}`, offset && `offset-${offset}`]
+    },
+    colStyle() {
       return {
         paddingLeft: this.gutter / 2 + 'px',
         paddingRight: this.gutter / 2 + 'px',
