@@ -52,17 +52,15 @@ export default {
   },
   computed: {
     colClass() {
-      const { span, offset, pad, narrowPc, pc, widePc } = this
+      const { span, offset, pad, narrowPc, pc, widePc, createClass } = this
 
       return [
         'col',
-        span && `col-${span}`,
-        offset && `offset-${offset}`,
-
-        pad && pad.span && `col-pad-${pad.span}`,
-        narrowPc && narrowPc.span && `col-narrow-pc-${narrowPc.span}`,
-        pc && pc.span && `col-pc-${pc.span}`,
-        widePc && widePc.span && `col-wide-pc-${widePc.span}`,
+        ...createClass({ span, offset }),
+        ...createClass(pad, 'pad-'),
+        ...createClass(narrowPc, 'narrow-pc-'),
+        ...createClass(pc, 'pc-'),
+        ...createClass(widePc, 'wide-pc-'),
       ]
     },
     colStyle() {
@@ -70,6 +68,19 @@ export default {
         paddingLeft: this.gutter / 2 + 'px',
         paddingRight: this.gutter / 2 + 'px',
       }
+    },
+  },
+  methods: {
+    createClass(size = {}, infix = '') {
+      const classList = []
+      const { span, offset } = size
+      if (span !== undefined) {
+        classList.push(`col-${infix}${span}`)
+      }
+      if (offset !== undefined) {
+        classList.push(`offset-${infix}${offset}`)
+      }
+      return classList
     },
   },
 }
