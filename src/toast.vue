@@ -1,14 +1,10 @@
 <template>
-  <div class="header">
-    <slot />
-  </div>
+  <div class="toast"></div>
 </template>
-
 <script>
 export default {
-  name: 'GuluHeader',
+  name: 'GuluToast',
 }
 </script>
-
 <style lang="scss" scoped>
 </style>

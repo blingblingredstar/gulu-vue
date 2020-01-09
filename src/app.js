@@ -11,6 +11,9 @@ import Header from './header.vue'
 import Sider from './sider.vue'
 import Content from './content.vue'
 import Footer from './footer.vue'
+import Toast from './toast.vue'
+
+import plugin from './plugin'
 
 Vue.component('g-button', Button)
 Vue.component('g-button-group', ButtonGroup)
@@ -23,22 +26,13 @@ Vue.component('g-header', Header)
 Vue.component('g-content', Content)
 Vue.component('g-footer', Footer)
 Vue.component('g-sider', Sider)
+Vue.component('g-toast', Toast)
+
+Vue.use(plugin)
 
 const app = new Vue({
   el: '#app',
-  data: {
-    loading1: true,
-    loading2: false,
-    loading3: false,
-    message: 'Hello Vue',
-  },
-  methods: {
-    /**
-     *
-     * @param {Event} e
-     */
-    inputChange(e) {
-      console.log(e.target.value)
-    },
+  created() {
+    this.$toast('hello toast')
   },
 })

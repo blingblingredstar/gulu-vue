@@ -45,30 +45,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* :root {
-  --button-height: 32px;
-  --button-bg: #fff;
-  --button-bg-active: #eee;
-  --font-size: 14px;
-  --border-radius: 4px;
-  --color: #333;
-  --border-color: #999;
-  --border-color-hover: #666;
-} */
-$red: #f1453d;
-$height: 32px;
-$color-disabled: #9c9c9c;
-$color-error: $red;
-$border-color: #999;
-$border-color-hover: #666;
-$border-color-error: $red;
-$border-color-disabled: #9c9c9c;
-$border-radius: 4px;
-$padding: 0 8px;
-$font-size: 12px;
-$box-shadow-color: rgba(0, 0, 0, 0.5);
+@import './_variables.scss';
 .wrapper {
-  font-size: $font-size;
+  font-size: $input-font-size;
   display: inline-flex;
   align-items: center;
 

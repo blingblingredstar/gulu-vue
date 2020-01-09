@@ -28,23 +28,6 @@
 
    > **IE8及以上浏览器**支持此样式
 
-   + 还需在使用前使用CSS的变量设置颜色等(后续会修改为SCSS变量)
-
-   ```css
-   :root {
-     --button-height: 32px;
-     --button-bg: #fff;
-     --button-bg-active: #eee;
-     --font-size: 14px;
-     --border-radius: 4px;
-     --color: #333;
-     --border-color: #999;
-     --border-color-hover: #666;
-   }
-   ```
-
-   > **IE15及以上浏览器**支持此样式
-
 2. 安装gulu-vue
 
   ```sh
