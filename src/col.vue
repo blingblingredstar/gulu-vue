@@ -45,7 +45,6 @@ export default {
         return value > 0 && value <= 24
       },
     },
-    phone: { type: Object, validator },
     pad: { type: Object, validator },
     narrowPc: { type: Object, validator },
     pc: { type: Object, validator },
@@ -53,13 +52,13 @@ export default {
   },
   computed: {
     colClass() {
-      const { span, offset, phone, pad, narrowPc, pc, widePc } = this
+      const { span, offset, pad, narrowPc, pc, widePc } = this
 
       return [
         'col',
         span && `col-${span}`,
         offset && `offset-${offset}`,
-        phone && phone.span && `col-phone-${phone.span}`,
+
         pad && pad.span && `col-pad-${pad.span}`,
         narrowPc && narrowPc.span && `col-narrow-pc-${narrowPc.span}`,
         pc && pc.span && `col-pc-${pc.span}`,
@@ -91,22 +90,6 @@ export default {
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
       margin-right: ($n / 24) * 100%;
-    }
-  }
-  /* phone */
-  @media (max-width: 576px) {
-    $class-prefix: col-phone-;
-    @for $n from 1 through 24 {
-      &.#{$class-prefix}#{$n} {
-        flex-basis: ($n / 24) * 100%;
-      }
-    }
-
-    $class-prefix: offset-phone-;
-    @for $n from 0 through 24 {
-      &.#{$class-prefix}#{$n} {
-        margin-right: ($n / 24) * 100%;
-      }
     }
   }
   /* pad */
