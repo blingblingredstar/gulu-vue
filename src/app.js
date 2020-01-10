@@ -30,11 +30,21 @@ Vue.component('g-toast', Toast)
 
 Vue.use(plugin)
 
+const str =
+  'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem veniam sunt eligendi doloribus dolores tempora. Blanditiis inventore quo quibusdam voluptate ea molestias, dicta sequi distinctio, enim, sapiente repudiandae itaque accusantium.'
+
 const app = new Vue({
   el: '#app',
   methods: {
     showToast() {
-      this.$toast('toast')
+      this.$toast('text', {
+        closeButton: {
+          text: 'close',
+          callback(toast) {
+            console.log(toast.closeButton)
+          },
+        },
+      })
     },
   },
 })
