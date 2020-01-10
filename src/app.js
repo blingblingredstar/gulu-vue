@@ -44,6 +44,7 @@ const app = new Vue({
             console.log(toast.closeButton)
           },
         },
+        position: 'middle',
       })
     },
   },

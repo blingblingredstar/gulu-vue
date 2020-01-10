@@ -1,5 +1,5 @@
 <template>
-  <div class="toast" ref="toast">
+  <div :class="toastClasses" ref="toast">
     <div class="message">
       <slot v-if="!enableHtml"></slot>
       <span v-else v-html="$slots.default[0]"></span>
@@ -34,6 +34,19 @@ export default {
       type: Boolean,
       default: false,
     },
+    position: {
+      type: String,
+      default: 'top',
+      validator(value) {
+        return ['top', 'bottom', 'middle'].includes(value)
+      },
+    },
+  },
+  computed: {
+    toastClasses() {
+      const { position } = this
+      return ['toast', position && `position-${position}`]
+    },
   },
   mounted() {
     this.updateLineHeightAsync()
@@ -55,8 +68,8 @@ export default {
       })
     },
     close() {
-      this.$el.remove()
-      this.$destroy()
+      // this.$el.remove()
+      // this.$destroy()
     },
     handleClickClose() {
       this.close()
@@ -72,9 +85,7 @@ export default {
 
 .toast {
   position: fixed;
-  top: 0;
   left: 50%;
-  transform: translateX(-50%);
   font-size: $font-size;
   line-height: 1.8;
   min-height: $toast-height;
@@ -98,6 +109,19 @@ export default {
     height: 100%;
     border-left: 1px solid #666;
     margin-left: 0.5em;
+  }
+
+  &.position-top {
+    top: 0;
+    transform: translateX(-50%);
+  }
+  &.position-bottom {
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  &.position-middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 </style>
