@@ -68,8 +68,8 @@ export default {
       })
     },
     close() {
-      // this.$el.remove()
-      // this.$destroy()
+      this.$el.remove()
+      this.$destroy()
     },
     handleClickClose() {
       this.close()
