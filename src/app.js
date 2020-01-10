@@ -36,15 +36,12 @@ const str =
 const app = new Vue({
   el: '#app',
   methods: {
-    showToast() {
+    showToast(position) {
       this.$toast('text', {
         closeButton: {
           text: 'close',
-          callback(toast) {
-            console.log(toast.closeButton)
-          },
         },
-        position: 'middle',
+        position,
       })
     },
   },

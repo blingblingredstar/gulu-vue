@@ -31,7 +31,9 @@
   </head>
   <body>
     <div id="app">
-      <g-button @click="showToast">点击弹出提示</g-button>
+      <g-button @click="showToast('top')">点击弹出提示</g-button>
+      <g-button @click="showToast('middle')">点击弹出提示</g-button>
+      <g-button @click="showToast('bottom')">点击弹出提示</g-button>
     </div>
     <script src="./src/app.js"></script>
   </body>
