@@ -19,7 +19,7 @@ export default {
       type: Boolean,
       default: true,
     },
-    autoCloseDely: {
+    autoCloseDelay: {
       type: [Number, String],
       default: 2000,
     },
@@ -59,7 +59,7 @@ export default {
       if (this.autoClose) {
         setTimeout(() => {
           this.close()
-        }, +this.autoCloseDely)
+        }, +this.autoCloseDelay)
       }
     },
     updateLineHeightAsync() {
