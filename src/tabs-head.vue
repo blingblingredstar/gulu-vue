@@ -18,9 +18,7 @@ export default {
 @import './_variables.scss';
 .tabs-head {
   display: flex;
-  min-height: $tabs-head-height;
   justify-content: flex-start;
-  align-items: center;
 
   > .actions-wrapper {
     margin-left: auto;

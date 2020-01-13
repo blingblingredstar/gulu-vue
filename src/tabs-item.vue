@@ -43,9 +43,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '_variables.scss';
 .tabs-item {
   flex-shrink: 0;
   padding: 0 2em;
+  min-height: $tabs-item-height;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 
   &.active {
     background: #ccc;
