@@ -33,7 +33,18 @@ export default {
     }
   },
   mounted() {
-    this.eventBus.$emit('update:selectedTab', this.selectedTab)
+    this.$children.forEach((child) => {
+      if (child.$options.name === 'GuluTabsHead') {
+        child.$children.forEach((item) => {
+          if (
+            item.$options.name === 'GuluTabsItem' &&
+            item.name === this.selectedTab
+          ) {
+            this.eventBus.$emit('update:selectedTab', this.selectedTab, item)
+          }
+        })
+      }
+    })
   },
 }
 </script>

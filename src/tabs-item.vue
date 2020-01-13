@@ -30,7 +30,7 @@ export default {
   inject: ['eventBus'],
   methods: {
     handleTabsItemClick() {
-      this.eventBus.$emit('update:selectedTab', this.name)
+      this.eventBus.$emit('update:selectedTab', this.name, this)
     },
   },
   created() {
@@ -53,7 +53,8 @@ export default {
   cursor: pointer;
 
   &.active {
-    background: #ccc;
+    color: $tabs-item-color;
+    font-weight: 700;
   }
 }
 </style>
