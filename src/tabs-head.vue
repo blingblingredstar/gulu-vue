@@ -29,6 +29,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   position: relative;
+  border-bottom: 1px solid #ccc;
 
   > .line {
     position: absolute;
@@ -39,6 +40,10 @@ export default {
 
   > .actions-wrapper {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em;
   }
 }
 </style>

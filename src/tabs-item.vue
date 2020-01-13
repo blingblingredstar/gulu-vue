@@ -24,12 +24,15 @@ export default {
   },
   computed: {
     tabsItemClasses() {
-      return ['tabs-item', this.active && 'active']
+      return ['tabs-item', this.active && 'active', this.disabled && 'disabled']
     },
   },
   inject: ['eventBus'],
   methods: {
     handleTabsItemClick() {
+      if (this.disabled) {
+        return undefined
+      }
       this.eventBus.$emit('update:selectedTab', this.name, this)
     },
   },
@@ -55,6 +58,9 @@ export default {
   &.active {
     color: $tabs-item-color;
     font-weight: 700;
+  }
+  &.disabled {
+    color: $tabs-item-color-disabled;
   }
 }
 </style>
