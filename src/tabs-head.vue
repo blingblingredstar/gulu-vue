@@ -12,10 +12,12 @@
 export default {
   name: 'GuluTabsHead',
   inject: ['eventBus'],
-  created() {
+  mounted() {
     this.eventBus.$on('update:selectedTab', (name, tabItem) => {
-      console.log(name)
-      console.log('tab-item :', tabItem)
+      const { width, left } = tabItem.$el.getBoundingClientRect()
+      const line = this.$refs.line
+      line.style.width = width + 'px'
+      line.style.left = left + 'px'
     })
   },
 }
@@ -31,8 +33,8 @@ export default {
   > .line {
     position: absolute;
     bottom: 0;
-    border-bottom: 1px solid $tabs-item-color;
-    width: 50px;
+    border-bottom: 2px solid $tabs-item-color;
+    transition: all 0.1s;
   }
 
   > .actions-wrapper {
