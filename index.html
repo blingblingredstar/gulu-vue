@@ -31,9 +31,23 @@
   </head>
   <body>
     <div id="app">
-      <g-button @click="showToast('top')">点击弹出提示</g-button>
-      <g-button @click="showToast('middle')">点击弹出提示</g-button>
-      <g-button @click="showToast('bottom')">点击弹出提示</g-button>
+      <g-tabs :selected-tab.sync="selectedTab">
+        <g-tabs-head>
+          <g-tabs-item name="home">
+            <g-icon name="settings"></g-icon>首页
+          </g-tabs-item>
+          <g-tabs-item name="news">新闻</g-tabs-item>
+          <g-tabs-item name="about" disabled>关于</g-tabs-item>
+          <template name="action">
+            <g-button icon="settings">action</g-button>
+          </template>
+        </g-tabs-head>
+        <g-tabs-body>
+          <g-tabs-panel name="home">首页 内容</g-tabs-panel>
+          <g-tabs-panel name="news">新闻 内容</g-tabs-panel>
+          <g-tabs-panel name="about">关于 内容</g-tabs-panel>
+        </g-tabs-body>
+      </g-tabs>
     </div>
     <script src="./src/app.js"></script>
   </body>

@@ -12,6 +12,11 @@ import Sider from './sider.vue'
 import Content from './content.vue'
 import Footer from './footer.vue'
 import Toast from './toast.vue'
+import Tabs from './tabs.vue'
+import TabsHead from './tabs-head.vue'
+import TabsItem from './tabs-item.vue'
+import TabsBody from './tabs-body.vue'
+import TabsPanel from './tabs-panel.vue'
 
 import plugin from './plugin'
 
@@ -27,6 +32,11 @@ Vue.component('g-content', Content)
 Vue.component('g-footer', Footer)
 Vue.component('g-sider', Sider)
 Vue.component('g-toast', Toast)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-panel', TabsPanel)
 
 Vue.use(plugin)
 
@@ -35,14 +45,7 @@ const str =
 
 const app = new Vue({
   el: '#app',
-  methods: {
-    showToast(position) {
-      this.$toast('text', {
-        closeButton: {
-          text: 'close',
-        },
-        position,
-      })
-    },
+  data: {
+    selectedTab: 'news',
   },
 })
