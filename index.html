@@ -30,27 +30,14 @@
     </style>
   </head>
   <body>
-    <div id="app">
-      <g-tabs>
-        <div>hi</div>
-      </g-tabs>
-      <!-- <g-tabs :selected-tab.sync="selectedTab">
-        <g-tabs-head>
-          <g-tabs-item name="home">
-            <g-icon name="settings"></g-icon>首页
-          </g-tabs-item>
-          <g-tabs-item name="news">新闻</g-tabs-item>
-          <g-tabs-item name="about" disabled>关于</g-tabs-item>
-          <template v-slot:actions>
-            <g-button icon="settings">action</g-button>
-          </template>
-        </g-tabs-head>
-        <g-tabs-body>
-          <g-tabs-panel name="home">首页 内容</g-tabs-panel>
-          <g-tabs-panel name="news">新闻 内容</g-tabs-panel>
-          <g-tabs-panel name="about">关于 内容</g-tabs-panel>
-        </g-tabs-body>
-      </g-tabs> -->
+    <div id="app" style="padding: 100px 0 0 100px;">
+      <g-popover>
+        <template v-slot:content>
+          <div>弹出内容</div>
+        </template>
+
+        <button>点击弹出</button>
+      </g-popover>
     </div>
     <script src="./src/app.js"></script>
   </body>
