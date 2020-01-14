@@ -1,5 +1,5 @@
 <template>
-  <div :class="tabsItemClasses" @click="handleTabsItemClick">
+  <div :class="tabsItemClasses" @click="handleTabsItemClick" :data-name="name">
     <slot></slot>
   </div>
 </template>
@@ -33,14 +33,19 @@ export default {
       if (this.disabled) {
         return undefined
       }
-      this.eventBus.$emit('update:selectedTab', this.name, this)
+      if (this.eventBus) {
+        this.eventBus.$emit('update:selectedTab', this.name, this)
+      }
+      this.$emit('click', this)
     },
   },
   created() {
-    this.eventBus.$on('update:selectedTab', (name) => {
-      const isSelected = name === this.name
-      this.active = isSelected
-    })
+    if (this.eventBus) {
+      this.eventBus.$on('update:selectedTab', (name) => {
+        const isSelected = name === this.name
+        this.active = isSelected
+      })
+    }
   },
 }
 </script>
@@ -61,6 +66,7 @@ export default {
   }
   &.disabled {
     color: $tabs-item-color-disabled;
+    cursor: not-allowed;
   }
 }
 </style>
