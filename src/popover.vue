@@ -45,38 +45,33 @@ export default {
         height,
         width,
       } = triggerWrapper.getBoundingClientRect()
-      const contentWrapperStyle = contentWrapper.style
+      const {
+        height: contentWrapperHeight,
+      } = contentWrapper.getBoundingClientRect()
 
       const positions = {
-        top() {
-          contentWrapperStyle.left = left + window.scrollX + 'px'
-          contentWrapperStyle.top = top + window.scrollY + 'px'
+        top: {
+          left: left + window.scrollX,
+          top: top + window.scrollY,
         },
-        bottom() {
-          contentWrapperStyle.left = left + window.scrollX + 'px'
-          contentWrapperStyle.top = top + height + window.scrollY + 'px'
+        bottom: {
+          left: left + window.scrollX,
+          top: top + height + window.scrollY,
         },
-        left() {
-          const {
-            height: contentWrapperHeight,
-          } = contentWrapper.getBoundingClientRect()
-          contentWrapperStyle.left = left + window.scrollX + 'px'
-          contentWrapperStyle.top =
-            top - (contentWrapperHeight - height) / 2 + window.scrollY + 'px'
+        left: {
+          left: left + window.scrollX,
+          top: top - (contentWrapperHeight - height) / 2 + window.scrollY,
         },
-        right() {
-          const {
-            height: contentWrapperHeight,
-          } = contentWrapper.getBoundingClientRect()
-          contentWrapperStyle.left = left + width + window.scrollX + 'px'
-          contentWrapperStyle.top =
-            top - (contentWrapperHeight - height) / 2 + window.scrollY + 'px'
+        right: {
+          left: left + width + window.scrollX,
+          top: top - (contentWrapperHeight - height) / 2 + window.scrollY,
         },
       }
 
       const claculatePosition = positions[this.position]
       if (claculatePosition) {
-        claculatePosition()
+        contentWrapper.style.left = claculatePosition.left + 'px'
+        contentWrapper.style.top = claculatePosition.top + 'px'
       }
     },
     listenToDocument(e) {
@@ -188,7 +183,6 @@ export default {
   }
 
   &.position-right {
-    /* transform: translateX(100%); */
     margin-left: 10px;
 
     &::before,
