@@ -47,9 +47,8 @@ export default {
       }, 0)
     },
     handleClick(e) {
-      if (!this.$refs.triggerWrapper.contains(e.target)) {
-        return undefined
-      }
+      if (!this.$refs.triggerWrapper.contains(e.target)) return
+
       this.isVisable = !this.isVisable
       if (!this.isVisable) {
         this.closePopover()
