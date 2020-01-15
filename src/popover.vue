@@ -1,9 +1,11 @@
 <template>
   <div class="popover" @click.stop="handleClick">
-    <div class="content-wrapper" v-if="isVisable" @click.stop>
+    <div class="content-wrapper" ref="contentWrapper" v-if="isVisable">
       <slot name="content"></slot>
     </div>
-    <slot></slot>
+    <span ref="triggerWrapper">
+      <slot></slot>
+    </span>
   </div>
 </template>
 
@@ -18,10 +20,18 @@ export default {
   methods: {
     handleClick() {
       this.isVisable = !this.isVisable
-      console.log('popover')
-      console.log(this.isVisable)
+
       if (this.isVisable) {
         setTimeout(() => {
+          document.body.appendChild(this.$refs.contentWrapper)
+          const {
+            left,
+            top,
+          } = this.$refs.triggerWrapper.getBoundingClientRect()
+          const contentWrapperStyle = this.$refs.contentWrapper.style
+          contentWrapperStyle.left = left + window.scrollX + 'px'
+          contentWrapperStyle.top = top + window.scrollY + 'px'
+
           const eventHandler = () => {
             this.isVisable = false
             document.removeEventListener('click', eventHandler)
@@ -31,6 +41,7 @@ export default {
       }
     },
   },
+  mounted() {},
 }
 </script>
 
@@ -39,14 +50,12 @@ export default {
   display: inline-block;
   vertical-align: top;
   position: relative;
-
-  .content-wrapper {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    border: 1px solid red;
-    box-shadow: 0 0 3px rbga(0, 0, 0, 0.5);
-  }
+}
+.content-wrapper {
+  position: absolute;
+  transform: translateY(-100%);
+  border: 1px solid red;
+  box-shadow: 0 0 3px rbga(0, 0, 0, 0.5);
 }
 </style>
 
