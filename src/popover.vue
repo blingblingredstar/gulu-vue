@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click.stop="handleClick">
+  <div class="popover" ref="popover">
     <div :class="contentWrapperClasses" ref="contentWrapper" v-if="isVisable">
       <slot name="content"></slot>
     </div>
@@ -23,6 +23,13 @@ export default {
       default: 'top',
       validator(value) {
         return ['left', 'right', 'top', 'bottom'].includes(value)
+      },
+    },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator(value) {
+        return ['click', 'hover'].includes(value)
       },
     },
   },
@@ -76,7 +83,7 @@ export default {
     },
     listenToDocument(e) {
       if (!this.$refs.contentWrapper) {
-        document.removeEventListener('click', this.listenToDocument)
+        return undefined
       }
       if (!this.$refs.contentWrapper.contains(e.target)) {
         this.closePopover()
@@ -87,6 +94,7 @@ export default {
       document.removeEventListener('click', this.listenToDocument)
     },
     onPopover() {
+      this.isVisable = !this.isVisable
       setTimeout(() => {
         this.repositionContent()
         document.addEventListener('click', this.listenToDocument)
@@ -95,14 +103,28 @@ export default {
     handleClick(e) {
       if (!this.$refs.triggerWrapper.contains(e.target)) return
 
-      this.isVisable = !this.isVisable
       if (!this.isVisable) {
         this.closePopover()
       }
       this.onPopover()
     },
   },
-  mounted() {},
+  mounted() {
+    if (this.trigger === 'click') {
+      this.$refs.popover.addEventListener('click', this.handleClick)
+    } else {
+      this.$refs.popover.addEventListener('mouseenter', this.onPopover)
+      this.$refs.popover.addEventListener('mouseleave', this.closePopover)
+    }
+  },
+  destroyed() {
+    if (this.trigger === 'click') {
+      this.$refs.popover.removeEventListener('click', this.handleClick)
+    } else {
+      this.$refs.popover.removeEventListener('mouseenter', this.onPopover)
+      this.$refs.popover.removeEventListener('mouseleave', this.closePopover)
+    }
+  },
 }
 </script>
 
