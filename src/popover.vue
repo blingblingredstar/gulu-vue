@@ -1,6 +1,6 @@
 <template>
-  <div class="popover" @click="handleClick">
-    <div class="content-wrapper" v-if="isVisable">
+  <div class="popover" @click.stop="handleClick">
+    <div class="content-wrapper" v-if="isVisable" @click.stop>
       <slot name="content"></slot>
     </div>
     <slot></slot>
@@ -18,6 +18,17 @@ export default {
   methods: {
     handleClick() {
       this.isVisable = !this.isVisable
+      console.log('popover')
+      console.log(this.isVisable)
+      if (this.isVisable) {
+        setTimeout(() => {
+          const eventHandler = () => {
+            this.isVisable = false
+            document.removeEventListener('click', eventHandler)
+          }
+          document.addEventListener('click', eventHandler)
+        }, 0)
+      }
     },
   },
 }
