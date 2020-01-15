@@ -18,27 +18,43 @@ export default {
     }
   },
   methods: {
-    handleClick() {
-      this.isVisable = !this.isVisable
-
-      if (this.isVisable) {
-        setTimeout(() => {
-          document.body.appendChild(this.$refs.contentWrapper)
-          const {
-            left,
-            top,
-          } = this.$refs.triggerWrapper.getBoundingClientRect()
-          const contentWrapperStyle = this.$refs.contentWrapper.style
-          contentWrapperStyle.left = left + window.scrollX + 'px'
-          contentWrapperStyle.top = top + window.scrollY + 'px'
-
-          const eventHandler = () => {
-            this.isVisable = false
-            document.removeEventListener('click', eventHandler)
-          }
-          document.addEventListener('click', eventHandler)
-        }, 0)
+    repositionContent() {
+      if (!this.$refs.contentWrapper) {
+        return undefined
       }
+      document.body.appendChild(this.$refs.contentWrapper)
+      const { left, top } = this.$refs.triggerWrapper.getBoundingClientRect()
+      const contentWrapperStyle = this.$refs.contentWrapper.style
+      contentWrapperStyle.left = left + window.scrollX + 'px'
+      contentWrapperStyle.top = top + window.scrollY + 'px'
+    },
+    listenToDocument(e) {
+      if (!this.$refs.contentWrapper) {
+        document.removeEventListener('click', this.listenToDocument)
+      }
+      if (!this.$refs.contentWrapper.contains(e.target)) {
+        this.closePopover()
+      }
+    },
+    closePopover() {
+      this.isVisable = false
+      document.removeEventListener('click', this.listenToDocument)
+    },
+    onPopover() {
+      setTimeout(() => {
+        this.repositionContent()
+        document.addEventListener('click', this.listenToDocument)
+      }, 0)
+    },
+    handleClick(e) {
+      if (!this.$refs.triggerWrapper.contains(e.target)) {
+        return undefined
+      }
+      this.isVisable = !this.isVisable
+      if (!this.isVisable) {
+        this.closePopover()
+      }
+      this.onPopover()
     },
   },
   mounted() {},
