@@ -161,6 +161,7 @@ export default {
     margin-top: -10px;
 
     &::before {
+      border-bottom: none;
       border-top-color: $popover-border-color;
       top: 100%;
     }
@@ -174,6 +175,7 @@ export default {
     margin-top: 10px;
 
     &::before {
+      border-top: none;
       border-bottom-color: $popover-border-color;
       bottom: 100%;
     }
@@ -194,6 +196,7 @@ export default {
     }
 
     &::before {
+      border-right: none;
       border-left-color: $popover-border-color;
       left: 100%;
     }
@@ -214,6 +217,7 @@ export default {
     }
 
     &::before {
+      border-left: none;
       border-right-color: $popover-border-color;
       right: 100%;
     }
