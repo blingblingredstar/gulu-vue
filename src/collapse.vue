@@ -5,8 +5,28 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   name: 'GuluCollapse',
+  props: {
+    single: {
+      type: String,
+      default: false,
+    },
+    selected: {
+      type: String,
+    },
+  },
+  data() {
+    return {
+      eventBus: new Vue(),
+    }
+  },
+  provide() {
+    return {
+      eventBus: this.eventBus,
+    }
+  },
 }
 </script>
 

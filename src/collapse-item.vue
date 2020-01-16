@@ -1,6 +1,6 @@
 <template>
   <div class="collapse-item">
-    <div class="title" @click="open = !open">{{ title }}</div>
+    <div class="title" @click="toggle">{{ title }}</div>
     <div class="content" v-show="open">
       <slot></slot>
     </div>
@@ -15,11 +15,36 @@ export default {
       type: String,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
       open: false,
     }
+  },
+  inject: ['eventBus'],
+  methods: {
+    toggle() {
+      if (this.open) {
+        this.close()
+      } else {
+        this.open = true
+        this.eventBus.$emit('update:selected', this.name)
+      }
+    },
+    close() {
+      this.open = false
+    },
+  },
+  mounted() {
+    this.eventBus.$on('update:selected', (name) => {
+      if (name !== this.name) {
+        this.close()
+      }
+    })
   },
 }
 </script>
