@@ -1,7 +1,7 @@
 <template>
   <div class="popover" ref="popover">
     <div :class="contentWrapperClasses" ref="contentWrapper" v-if="isVisable">
-      <slot name="content"></slot>
+      <slot name="content" :close="closePopover"></slot>
     </div>
     <span ref="triggerWrapper" :style="{display: 'inline-block'}">
       <slot></slot>
@@ -12,11 +12,6 @@
 <script>
 export default {
   name: 'GuluPopover',
-  data() {
-    return {
-      isVisable: false,
-    }
-  },
   props: {
     position: {
       type: String,
@@ -32,6 +27,11 @@ export default {
         return ['click', 'hover'].includes(value)
       },
     },
+  },
+  data() {
+    return {
+      isVisable: false,
+    }
   },
   computed: {
     contentWrapperClasses() {

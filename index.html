@@ -33,19 +33,14 @@
     <div id="app" style="padding: 100px 0 0 100px;">
       <div class="box">
         <g-popover>
-          <template v-slot:content>
+          <template v-slot:content="{close}">
             <div>
-              弹出内容 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Tempora dicta illo, dolores, earum labore soluta rem aperiam quod
-              sapiente praesentium provident facilis? Minus sapiente saepe,
-              corrupti reprehenderit nemo molestiae ullam quidem autem
-              consequuntur et unde cupiditate dolor quibusdam quos iste at,
-              ipsam velit. Quod dolor facere cupiditate veniam. Eligendi,
-              delectus!
+              弹出内容 Lorem, ipsum dolor sit amet consectetur
+              <g-button @click="close">关闭</g-button>
             </div>
           </template>
 
-          <g-button>点击弹出</g-button>
+          <g-button>关闭</g-button>
         </g-popover>
         <g-popover position="bottom">
           <template v-slot:content>
