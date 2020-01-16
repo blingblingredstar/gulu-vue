@@ -14,7 +14,7 @@ export default {
       default: false,
     },
     selected: {
-      type: String,
+      type: Array,
     },
   },
   data() {
@@ -28,9 +28,21 @@ export default {
     }
   },
   mounted() {
-    this.eventBus.$emit('update:selected', this.selected)
-    this.eventBus.$on('update:selected', (name) => {
-      this.$emit('update:selected', name)
+    this.eventBus.$on('update:addSelected', (name) => {
+      let selected = [...this.selected]
+      if (this.single) {
+        selected = [name]
+      } else {
+        selected.push(name)
+      }
+      this.$emit('update:selected', selected)
+      this.eventBus.$emit('update:selected', selected)
+    })
+    this.eventBus.$on('update:removeSelected', (name) => {
+      const index = this.selected.indexOf(name)
+      this.selected.splice(index, 1)
+      this.$emit('update:selected', this.selected)
+      this.eventBus.$emit('update:selected', this.selected)
     })
   },
 }

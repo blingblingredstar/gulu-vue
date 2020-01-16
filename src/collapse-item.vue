@@ -29,25 +29,19 @@ export default {
   methods: {
     toggle() {
       if (this.open) {
-        this.close()
+        this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
       } else {
-        this.eventBus && this.eventBus.$emit('update:selected', this.name)
+        this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
       }
-    },
-    close() {
-      this.open = false
-    },
-    show() {
-      this.open = true
     },
   },
   mounted() {
     this.eventBus &&
-      this.eventBus.$on('update:selected', (name) => {
-        if (name !== this.name) {
-          this.close()
+      this.eventBus.$on('update:selected', (names) => {
+        if (names.includes(this.name)) {
+          this.open = true
         } else {
-          this.show()
+          this.open = false
         }
       })
   },

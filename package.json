@@ -11,7 +11,9 @@
     "start": "parcel index.html",
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run",
-    "npm-build": "npx parcel build index.js --no-cache --no-minify"
+    "npm-build": "npx parcel build index.js --no-cache --no-minify",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "vue": "^2.6.11",
@@ -29,9 +31,11 @@
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^7.0.0",
     "parcel": "^1.12.4",
+    "sass-loader": "^8.0.2",
     "sinon": "^8.0.4",
     "sinon-chai": "^3.4.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.2.0"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

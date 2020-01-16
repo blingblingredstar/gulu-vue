@@ -52,6 +52,6 @@ const str =
 const app = new Vue({
   el: '#app',
   data: {
-    selectedTab: '2',
+    selectedTab: ['2'],
   },
 })
