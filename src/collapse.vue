@@ -10,7 +10,7 @@ export default {
   name: 'GuluCollapse',
   props: {
     single: {
-      type: String,
+      type: Boolean,
       default: false,
     },
     selected: {
@@ -26,6 +26,12 @@ export default {
     return {
       eventBus: this.eventBus,
     }
+  },
+  mounted() {
+    this.eventBus.$emit('update:selected', this.selected)
+    this.eventBus.$on('update:selected', (name) => {
+      this.$emit('update:selected', name)
+    })
   },
 }
 </script>
