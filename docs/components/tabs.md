@@ -1,7 +1,7 @@
-# Button-按钮
+# Tabs-标签页
 
 ## 使用方法
 <!-- markdownlint-disable md033  -->
 <ClientOnly>
-  <button-demos/>
+  <tabs-demo-1 />
 </ClientOnly>

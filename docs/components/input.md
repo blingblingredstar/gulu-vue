@@ -1,7 +1,8 @@
-# Button-按钮
+# Input-输入框 
 
 ## 使用方法
 <!-- markdownlint-disable md033  -->
 <ClientOnly>
-  <button-demos/>
+  <input-demo-1 />
+  <input-demo-2 />
 </ClientOnly>

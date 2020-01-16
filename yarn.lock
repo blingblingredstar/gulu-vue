@@ -4647,6 +4647,14 @@ growl@1.10.5:
   resolved "https://registry.npm.taobao.org/growl/download/growl-1.10.5.tgz#f2735dc2283674fa67478b10181059355c369e5e"
   integrity sha1-8nNdwig2dPpnR4sQGBBZNVw2nl4=
 
+gulu-vue@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npm.taobao.org/gulu-vue/download/gulu-vue-0.0.4.tgz#6b874f48ec0913b011ad17b264c408d2094ef08a"
+  integrity sha1-a4dPSOwJE7ARrReyZMQI0glO8Io=
+  dependencies:
+    vue "^2.6.11"
+    vue-hot-reload-api "^2.3.4"
+
 handle-thing@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/handle-thing/download/handle-thing-2.0.0.tgz#0e039695ff50c93fc288557d696f3c1dc6776754"
