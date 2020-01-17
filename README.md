@@ -51,10 +51,4 @@
 
 ## 文档
 
-## 提问
-
-## 变更记录
-
-## 联系方式
-
-## 贡献代码
+见 [官网](https://blingblingredstar.github.io/gulu-vue/)
