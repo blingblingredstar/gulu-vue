@@ -9,6 +9,7 @@ module.exports = {
       {
         title: '组件',
         children: [
+          '/components/icon.md',
           '/components/button.md',
           '/components/grid.md',
           '/components/input.md',
@@ -16,6 +17,7 @@ module.exports = {
           '/components/popover.md',
           '/components/tabs.md',
           '/components/toast.md',
+          '/components/collapse.md',
         ],
       },
     ],

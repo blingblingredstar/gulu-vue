@@ -4655,6 +4655,15 @@ gulu-vue@^0.0.5:
     vue "^2.6.11"
     vue-hot-reload-api "^2.3.4"
 
+gulu-vue@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npm.taobao.org/gulu-vue/download/gulu-vue-0.0.6.tgz?cache=0&sync_timestamp=1579244628006&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fgulu-vue%2Fdownload%2Fgulu-vue-0.0.6.tgz#2834ed83738f5b9ed9b0d43eaa35c87746ac9ac9"
+  integrity sha1-KDTtg3OPW57ZsNQ+qjXId0asmsk=
+  dependencies:
+    gulu-vue "^0.0.5"
+    vue "^2.6.11"
+    vue-hot-reload-api "^2.3.4"
+
 handle-thing@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/handle-thing/download/handle-thing-2.0.0.tgz#0e039695ff50c93fc288557d696f3c1dc6776754"

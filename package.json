@@ -16,7 +16,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "gulu-vue": "^0.0.5",
+    "gulu-vue": "^0.0.6",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"
   },

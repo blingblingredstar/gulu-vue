@@ -20,6 +20,7 @@ export default {
   data() {
     return {
       eventBus: new Vue(),
+      selectedData: this.selected,
     }
   },
   provide() {
@@ -29,21 +30,21 @@ export default {
   },
   mounted() {
     this.eventBus.$on('update:addSelected', (name) => {
-      let selected = [...this.selected]
       if (this.single) {
-        selected = [name]
+        this.selectedData = [name]
       } else {
-        selected.push(name)
+        this.selectedData.push(name)
       }
-      this.$emit('update:selected', selected)
-      this.eventBus.$emit('update:selected', selected)
+      this.$emit('update:selected', this.selectedData)
+      this.eventBus.$emit('update:selected', this.selectedData)
     })
     this.eventBus.$on('update:removeSelected', (name) => {
-      const index = this.selected.indexOf(name)
-      this.selected.splice(index, 1)
-      this.$emit('update:selected', this.selected)
-      this.eventBus.$emit('update:selected', this.selected)
+      const index = this.selectedData.indexOf(name)
+      this.selectedData.splice(index, 1)
+      this.$emit('update:selected', this.selectedData)
+      this.eventBus.$emit('update:selected', this.selectedData)
     })
+    this.eventBus.$emit('update:selected', this.selected)
   },
 }
 </script>
