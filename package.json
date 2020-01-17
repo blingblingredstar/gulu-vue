@@ -1,6 +1,6 @@
 {
   "name": "gulu-vue",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "基于Vue二次封装的UI框架",
   "main": "dist/index.js",
   "repository": "https://github.com/blingblingredstar/gulu-vue",
@@ -16,7 +16,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "gulu-vue": "^0.0.6",
+    "gulu-vue": "^0.0.7",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"
   },
