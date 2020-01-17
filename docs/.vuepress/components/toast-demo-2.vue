@@ -16,9 +16,6 @@
   </div>
 </template>
 <style>
-.gulu-toast {
-  z-index: 30 !important;
-}
 </style>
 <style scoped>
 * {
@@ -26,8 +23,9 @@
 }
 </style>
 <script>
-import plugin from '../../../src/plugin'
-import GButton from '../../../src/button'
+import { plugin } from 'gulu-vue'
+import { Button as GButton } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
 import Vue from 'vue'
 Vue.use(plugin)
 export default {
@@ -35,11 +33,6 @@ export default {
   data() {
     return {
       content: `
-          <style>
-            .gulu-toast {
-              z-index: 30;
-            }
-          </style>
           <div>
             <g-button @click="onClickButton">上方弹出</g-button>
           </div>
@@ -54,7 +47,7 @@ export default {
                 }
               })
             }
-          },
+          }
       `
         .replace(/^ {8}/gm, '')
         .trim(),

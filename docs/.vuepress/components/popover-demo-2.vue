@@ -33,8 +33,10 @@
 <style scoped>
 </style>
 <script>
-import GButton from '../../../src/button'
-import GPopover from '../../../src/popover'
+import { Button as GButton } from 'gulu-vue'
+import { Popover as GPopover } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
+
 export default {
   components: { GButton, GPopover },
   data() {

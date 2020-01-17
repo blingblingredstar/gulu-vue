@@ -6,12 +6,12 @@
     </p>
 
     <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
-      <g-header style="height: 50px; background:lightskyblue;">header</g-header>
+      <g-header style="height: 50px; background:#333;">header</g-header>
       <g-layout>
-        <g-sider style="height: 100px; background:#ddd; width:200px; color: black;">sider</g-sider>
-        <g-content style="height: 100px; background:deepskyblue;">content</g-content>
+        <g-sider style="height: 100px; background:#ddd; width:200px; color: #999;">sider</g-sider>
+        <g-content style="height: 100px; background:#666;">content</g-content>
       </g-layout>
-      <g-footer style="height: 50px; background:lightskyblue;">footer</g-footer>
+      <g-footer style="height: 50px; background:#333;">footer</g-footer>
     </g-layout>
 
     <p>
@@ -26,29 +26,30 @@
 }
 </style>
 <script>
-import GLayout from '../../../src/layout'
-import GHeader from '../../../src/header'
-import GFooter from '../../../src/footer'
-import GContent from '../../../src/content'
-import GSider from '../../../src/sider'
+import { Layout as GLayout } from 'gulu-vue'
+import { Header as GHeader } from 'gulu-vue'
+import { Footer as GFooter } from 'gulu-vue'
+import { Content as GContent } from 'gulu-vue'
+import { Sider as GSider } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
 export default {
   components: { GLayout, GHeader, GFooter, GContent, GSider },
   data() {
     return {
       content: `
           <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
-            <g-header style="height: 50px; background:lightskyblue;">
+            <g-header style="height: 50px; background:#333;">
               header
             </g-header>
             <g-layout>
-              <g-sider style="height: 100px; background:#ddd; width:200px; color: black;">
+              <g-sider style="height: 100px; background:#999; width:200px; color: black;">
                 sider
               </g-sider>
-              <g-content style="height: 100px; background:deepskyblue;">
+              <g-content style="height: 100px; background:#666;">
                 content
               </g-content>
             </g-layout>
-            <g-footer style="height: 50px; background:lightskyblue;">
+            <g-footer style="height: 50px; background:#333;">
               footer
             </g-footer>
           </g-layout>

@@ -8,9 +8,9 @@
     <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
       <g-sider style=" background:#ddd; width:200px; color: black;">sider</g-sider>
       <g-layout>
-        <g-header style="height: 50px; background:lightskyblue;">header</g-header>
-        <g-content style="height: 100px; background:deepskyblue;">content</g-content>
-        <g-footer style="height: 50px; background:lightskyblue;">footer</g-footer>
+        <g-header style="height: 50px; background:#999;">header</g-header>
+        <g-content style="height: 100px; background:#333;">content</g-content>
+        <g-footer style="height: 50px; background:#999">footer</g-footer>
       </g-layout>
     </g-layout>
     <p>
@@ -25,11 +25,12 @@
 }
 </style>
 <script>
-import GLayout from '../../../src/layout'
-import GHeader from '../../../src/header'
-import GFooter from '../../../src/footer'
-import GContent from '../../../src/content'
-import GSider from '../../../src/sider'
+import { Layout as GLayout } from 'gulu-vue'
+import { Header as GHeader } from 'gulu-vue'
+import { Footer as GFooter } from 'gulu-vue'
+import { Content as GContent } from 'gulu-vue'
+import { Sider as GSider } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
 export default {
   components: { GLayout, GHeader, GFooter, GContent, GSider },
   data() {
@@ -40,13 +41,13 @@ export default {
               sider
             </g-sider>
             <g-layout>
-              <g-header style="height: 50px; background:lightskyblue;">
+              <g-header style="height: 50px; background:#999;">
                 header
               </g-header>
-              <g-content style="height: 100px; background:deepskyblue;">
+              <g-content style="height: 100px; background:#333;">
                 content
               </g-content>
-              <g-footer style="height: 50px; background:lightskyblue;">
+              <g-footer style="height: 50px; background:#999;">
                 footer
               </g-footer>
             </g-layout>

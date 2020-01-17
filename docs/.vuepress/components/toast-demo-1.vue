@@ -17,19 +17,15 @@
     <pre><code>{{content}}</code></pre>
   </div>
 </template>
-<style>
-.gulu-toast {
-  z-index: 30 !important;
-}
-</style>
 <style scoped>
 * {
   box-sizing: border-box;
 }
 </style>
 <script>
-import plugin from '../../../src/plugin'
-import GButton from '../../../src/button'
+import { plugin } from 'gulu-vue'
+import { Button as GButton } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
 import Vue from 'vue'
 Vue.use(plugin)
 export default {
@@ -37,11 +33,6 @@ export default {
   data() {
     return {
       content: `
-          <style>
-            .gulu-toast {
-              z-index: 30;
-            }
-          </style>
           <g-button @click="$toast('点击弹出提示')">上方弹出</g-button>
           <g-button @click="$toast('点击弹出提示', {position:'middle'})">中间弹出</g-button>
           <g-button @click="$toast('点击弹出提示', {position:'bottom'})">下方弹出</g-button>

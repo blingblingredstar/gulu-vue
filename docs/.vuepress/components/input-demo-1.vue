@@ -15,7 +15,8 @@
   </div>
 </template>
 <script>
-import GInput from '../../../src/input'
+import { Input as GInput } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
 export default {
   components: { GInput },
   data() {

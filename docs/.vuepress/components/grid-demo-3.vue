@@ -81,8 +81,9 @@
 }
 </style>
 <script>
-import GRow from '../../../src/row'
-import GCol from '../../../src/col'
+import { Row as GRow } from 'gulu-vue'
+import { Col as GCol } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
 export default {
   components: { GRow, GCol },
   data() {

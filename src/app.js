@@ -1,27 +1,6 @@
 import Vue from 'vue'
 
-import Button from './button.vue'
-import ButtonGroup from './button-group.vue'
-import Icon from './icon.vue'
-import Input from './input.vue'
-import Row from './row.vue'
-import Col from './col.vue'
-import Layout from './layout.vue'
-import Header from './header.vue'
-import Sider from './sider.vue'
-import Content from './content.vue'
-import Footer from './footer.vue'
-import Toast from './toast.vue'
-import Tabs from './tabs.vue'
-import TabsHead from './tabs-head.vue'
-import TabsItem from './tabs-item.vue'
-import TabsBody from './tabs-body.vue'
-import TabsPanel from './tabs-panel.vue'
-import Popover from './popover.vue'
-import Collapse from './collapse.vue'
-import CollapseItem from './collapse-item.vue'
-
-import plugin from './plugin'
+import { Button } from 'gulu-vue'
 
 Vue.component('g-button', Button)
 Vue.component('g-button-group', ButtonGroup)

@@ -16,7 +16,9 @@
   </div>
 </template>
 <script>
-import Button from '../../../src/button'
+import { Button } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
+
 export default {
   components: {
     'g-button': Button,

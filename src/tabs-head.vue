@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-head">
+  <div class="tabs-head" ref="head">
     <slot></slot>
     <span class="line" ref="line"></span>
     <div class="actions-wrapper">
@@ -12,12 +12,17 @@
 export default {
   name: 'GuluTabsHead',
   inject: ['eventBus'],
+  methods: {
+    updateLinePosition(selectedTab) {
+      const { width, left } = selectedTab.$el.getBoundingClientRect()
+      const { left: headLeft } = this.$refs.head.getBoundingClientRect()
+      this.$refs.line.style.width = width + 'px'
+      this.$refs.line.style.left = left - headLeft + 'px'
+    },
+  },
   mounted() {
     this.eventBus.$on('update:selectedTab', (name, tabItem) => {
-      const { width, left } = tabItem.$el.getBoundingClientRect()
-      const line = this.$refs.line
-      line.style.width = width + 'px'
-      line.style.left = left + 'px'
+      this.updateLinePosition(tabItem)
     })
   },
 }

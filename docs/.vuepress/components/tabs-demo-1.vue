@@ -4,7 +4,7 @@
     <p>
       <strong>预览</strong>
     </p>
-    <g-tabs :selected="selected">
+    <g-tabs :selectedTab="selected">
       <g-tabs-head>
         <g-tabs-item name="1">1</g-tabs-item>
         <g-tabs-item name="2">2</g-tabs-item>
@@ -22,11 +22,13 @@
   </div>
 </template>
 <script>
-import GTabs from '../../../src/tabs'
-import GTabsBody from '../../../src/tabs-body'
-import GTabsHead from '../../../src/tabs-head'
-import GTabsItem from '../../../src/tabs-item'
-import GTabsPane from '../../../src/tabs-panel'
+import { Tabs as GTabs } from 'gulu-vue'
+import { TabsBody as GTabsBody } from 'gulu-vue'
+import { TabsHead as GTabsHead } from 'gulu-vue'
+import { TabsItem as GTabsItem } from 'gulu-vue'
+import { TabsPanel as GTabsPane } from 'gulu-vue'
+import 'gulu-vue/dist/index.css'
+
 export default {
   components: { GTabs, GTabsBody, GTabsHead, GTabsItem, GTabsPane },
   data() {
